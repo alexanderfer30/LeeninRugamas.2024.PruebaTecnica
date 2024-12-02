@@ -1,0 +1,14 @@
+﻿@model Categoria
+
+<h1>Editar Categoría</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+
+<a href="/categorias" class="btn btn-secondary mt-2">Volver</a>

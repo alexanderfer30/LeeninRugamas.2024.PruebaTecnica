@@ -1,0 +1,31 @@
+﻿@model List<Producto>
+
+<h1>Productos</h1>
+<a href="/categorias" class="btn btn-secondary">Ir a Categorías</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model)
+        {
+            <tr>
+                <td>@producto.Nombre</td>
+                <td>@producto.Precio</td>
+                <td>@producto.Categoria.Nombre</td>
+                <td>
+                    <form method="post" action="/productos/eliminar">
+                        <input type="hidden" name="id" value="@producto.Id" />
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

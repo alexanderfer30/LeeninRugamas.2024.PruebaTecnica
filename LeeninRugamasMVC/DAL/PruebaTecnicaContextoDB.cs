@@ -11,6 +11,11 @@ namespace LeeninRugamasMVC.DAL
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Producto> Productos { get; set; }
 
+        public PruebaTecnicaContextoDB(DbContextOptions<PruebaTecnicaContextoDB> options):base(options)
+        {
+            
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Categoria>()
